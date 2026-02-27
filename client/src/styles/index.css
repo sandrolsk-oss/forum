@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #ff007f;
+  --cyan: #00f3ff;
+  --matrix-green: #00ff41;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Background Pattern */
+.dark-bg-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%);
+}
+
+/* Scanlines Effect */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.2) 50%,
+    rgba(0,0,0,0.2)
+  );
+  background-size: 100% 4px;
+}
+
+/* Common Components */
+@layer components {
+  .glass-panel {
+    @apply relative overflow-hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cyber-button {
+    @apply uppercase tracking-widest py-3 px-6 bg-transparent border-2 hover:bg-opacity-10 transition-all duration-300 cursor-pointer;
+  }
+  
+  .cyber-button:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 0, 127, 0.1);
+  }
+}
